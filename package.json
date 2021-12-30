@@ -1,0 +1,28 @@
+{
+  "name": "restful-api-express",
+  "version": "1.0.0",
+  "description": "Creacion de una api rest con express",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeremiasArriondo/restful-api-express.git"
+  },
+  "keywords": [
+    "api",
+    "rest",
+    "full",
+    "express"
+  ],
+  "author": "Jeremias Arriondo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JeremiasArriondo/restful-api-express/issues"
+  },
+  "homepage": "https://github.com/JeremiasArriondo/restful-api-express#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
