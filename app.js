@@ -1,11 +1,13 @@
-const debug = require('debug')('app:inicio');
 const express = require('express');
-const config = require('config');
-const usuarios = require('./routes/usuarios')
+const mongoose = require('mongoose');
 //Instanciamos express
 const app = express();
-const morgan = require('morgan');
 
+const config = require('config');
+const usuarios = require('./routes/usuarios')
+
+//const morgan = require('morgan');
+//const debug = require('debug')('app:inicio');
 //Especificamos un middlewares para manipular datos(body)
 app.use(express.json);
 //Middlewares para recibir datos del tipo key y value
