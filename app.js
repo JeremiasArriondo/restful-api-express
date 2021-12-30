@@ -1,14 +1,31 @@
+const debug = require('debug')('app:inicio');
 const express = require('express');
+const config = require('config');
+const usuarios = require('./routes/usuarios')
 //Instanciamos express
 const app = express();
+const morgan = require('morgan');
 
-app.get('/', (req, res) => {
-    res.send('Hello wordl');
-});
+//Especificamos un middlewares para manipular datos(body)
+app.use(express.json);
+//Middlewares para recibir datos del tipo key y value
+app.use(express.urlencoded({extended: true}));
+//Middlewares static, me permite acceder mas facilmente a recursos publicos
+app.use(express.static('public'));
 
-app.get('/api/usuarios', (req, res) => {
-    res.send(['Arriondo', 'Jeremias']);
-})
+app.use('/api/usuarios', usuarios);
+
+
+//configuracion de entorno
+console.log('Aplicación '+ config.get('nombre'));
+
+//Uso de un middleware de tercero
+if(app.get('env') === 'development'){
+    app.use(morgan('tiny'));
+    //con la funcion vamos a ir mostrando la depuración
+    debug('Morgan está habilitado');
+};
+
 
 //Creando una variable de entorno
 const port = process.env.PORT || 5000;
