@@ -23,6 +23,9 @@
   },
   "homepage": "https://github.com/JeremiasArriondo/restful-api-express#readme",
   "dependencies": {
-    "express": "^4.17.2"
+    "config": "^3.3.6",
+    "express": "^4.17.2",
+    "joi": "^17.5.0",
+    "morgan": "^1.10.0"
   }
 }
